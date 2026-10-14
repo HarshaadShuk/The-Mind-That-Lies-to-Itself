@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Your download — The Mind That Lies to Itself</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Download page for The Mind That Lies to Itself.">
+<meta name="theme-color" content="#0f141c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
+<script src="site.config.js"></script>
+<style>
+body{margin:0;background:#0f141c;color:#efe8dc;font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#d4a043;text-underline-offset:3px}
+a:hover{color:#e6bb68}
+:focus-visible{outline:2px solid #d4a043;outline-offset:3px}
+</style>
+</helmet>
+
+<main style="position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column">
+  <div aria-hidden="true" style="position:absolute;right:-20vw;top:40%;width:min(1000px,120vw);aspect-ratio:1;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle, #1c2534 0%, #161e2b 45%, #0f141c 70%);pointer-events:none"></div>
+
+  <header style="position:relative;max-width:1100px;width:100%;margin:0 auto;padding:22px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #222b3a">
+    <a href="{{ homeHref }}" style="display:flex;align-items:center;gap:10px;color:#efe8dc;text-decoration:none;font-family:Lora,Georgia,serif;font-size:17px;font-weight:500">
+      <span aria-hidden="true" style="width:7px;height:7px;background:#d4a043;transform:rotate(45deg)"></span>
+      <span>The Mind That <em style="color:#d4a043">Lies</em> to Itself</span>
+    </a>
+  </header>
+
+  <div style="position:relative;flex:1;max-width:1100px;width:100%;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,7vw,96px)">
+    <div style="flex:1 1 440px;min-width:0;max-width:600px">
+      <p style="margin:0 0 20px;font-size:12px;font-weight:600;letter-spacing:0.28em;color:#d4a043;text-transform:uppercase">Thank you</p>
+      <h1 style="margin:0;font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;letter-spacing:-0.01em;color:#efe8dc;text-wrap:balance">Your copy is ready to download.</h1>
+      <p style="margin:24px 0 0;font-size:1.1rem;line-height:1.65;color:#b7c0cd;max-width:32em;text-wrap:pretty">Thank you for buying The Mind That Lies to Itself. Use the button below to save the PDF to your device. We suggest downloading it now so you keep your own copy.</p>
+
+      <div style="margin-top:36px;display:flex;flex-direction:column;align-items:flex-start;gap:14px">
+        <a href="{{ downloadHref }}" download="{{ fileName }}" onClick="{{ onDownload }}" aria-label="Download The Mind That Lies to Itself, PDF eBook" style="display:inline-flex;align-items:center;gap:14px;background:#d4a043;color:#0f141c;text-decoration:none;font-weight:600;font-size:18px;padding:19px 32px;border-radius:2px;transition:background .2s" style-hover="background:#e6bb68;color:#0f141c">
+          <span aria-hidden="true" style="font-size:20px;line-height:1">↓</span>Download Your eBook (PDF)
+        </a>
+        <p style="margin:0;font-size:14px;color:#9aa6b8">{{ fileName }} · 129 pages</p>
+        <sc-if value="{{ downloadMissing }}" hint-placeholder-val="{{ false }}">
+          <p role="alert" style="margin:4px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#efe8dc;border:1px dashed #d4a043;padding:8px 10px">Download link not configured. Set ebookDownloadUrl in site.config.js.</p>
+        </sc-if>
+      </div>
+
+      <div style="margin-top:48px;padding-top:28px;border-top:1px solid #263042;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 36px;font-size:0.97rem;line-height:1.6;color:#b7c0cd">
+        <div>
+          <h2 style="margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:0.12em;color:#efe8dc;text-transform:uppercase">Reading it</h2>
+          <p style="margin:0">The eBook is a PDF. It opens on most phones, tablets and computers in the built-in viewer, your browser or any PDF app. On a phone, use the share or save option if it opens in a viewer first.</p>
+        </div>
+        <div>
+          <h2 style="margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:0.12em;color:#efe8dc;text-transform:uppercase">Trouble downloading?</h2>
+          <sc-if value="{{ hasSupport }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0">Email <a href="{{ supportHref }}">{{ supportEmail }}</a> with the email or phone number you used at checkout and we will help.</p>
+          </sc-if>
+          <sc-if value="{{ noSupport }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0">Try again in a different browser or on a stable connection.</p>
+            <p style="margin:10px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#9aa6b8;border:1px dashed #4a5568;padding:6px 8px;display:inline-block">Set supportEmail in site.config.js</p>
+          </sc-if>
+        </div>
+      </div>
+
+      <p style="margin:40px 0 0;font-size:14px"><a href="{{ homeHref }}" style="color:#9aa6b8" style-hover="color:#efe8dc">← Back to the book page</a></p>
+    </div>
+
+    <div style="flex:1 1 260px;display:flex;justify-content:center">
+      <div style="position:relative;display:flex;justify-content:center;align-items:center;padding:20px">
+        <div aria-hidden="true" style="position:absolute;width:min(400px,84vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(212,160,67,0.22)"></div>
+        <img src="assets/cover-720.jpg" width="720" height="1081" alt="Cover of The Mind That Lies to Itself" style="position:relative;display:block;width:clamp(180px,48vw,300px);height:auto;box-shadow:24px 32px 56px rgba(0,0,0,0.55)">
+      </div>
+    </div>
+  </div>
+
+  <footer style="position:relative;max-width:1100px;width:100%;margin:0 auto;padding:24px clamp(20px,4vw,40px);border-top:1px solid #222b3a;font-size:13px;color:#9aa6b8">{{ copyright }}</footer>
+</main>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cfg: window.SITE_CONFIG || null };
+  componentDidMount() {
+    this.onCfg = () => this.setState({ cfg: window.SITE_CONFIG || null }, () => {
+      if (!this.viewed && this.state.cfg) { this.viewed = true; this.track('page_view_thank_you'); }
+    });
+    window.addEventListener('siteconfig', this.onCfg);
+    if (window.SITE_CONFIG) this.onCfg();
+  }
+  componentWillUnmount() { window.removeEventListener('siteconfig', this.onCfg); }
+  track(name, data) { if (typeof window.trackEvent === 'function') window.trackEvent(name, data); }
+  renderVals() {
+    const cfg = this.state.cfg || {};
+    const configured = (v) => (typeof window.isConfigured === 'function' ? window.isConfigured(v) : false);
+    const dl = configured(cfg.ebookDownloadUrl) ? cfg.ebookDownloadUrl : null;
+    const email = typeof cfg.supportEmail === 'string' && cfg.supportEmail.includes('@') ? cfg.supportEmail : null;
+    const site = configured(cfg.siteUrl) ? cfg.siteUrl.replace(/\/$/, '') + '/' : 'Sales Page.dc.html';
+    return {
+      downloadHref: dl || '#',
+      fileName: cfg.ebookFileName || 'The-Mind-That-Lies-to-Itself.pdf',
+      downloadMissing: !!this.state.cfg && !dl,
+      onDownload: (e) => {
+        if (!dl) { e.preventDefault(); this.track('download_not_configured'); return; }
+        this.track('download_click');
+      },
+      hasSupport: !!email,
+      noSupport: !email,
+      supportEmail: email || '',
+      supportHref: email ? 'mailto:' + email : '#',
+      homeHref: site,
+      copyright: '© ' + new Date().getFullYear() + (cfg.copyrightHolder ? ' ' + cfg.copyrightHolder : '') + '. All rights reserved.'
+    };
+  }
+}
+</script>
+</body>
+</html>
